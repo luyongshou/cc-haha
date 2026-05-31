@@ -2725,8 +2725,12 @@ describe('MessageList nested tool calls', () => {
 
     expect(userShell).toBeTruthy()
     expect(userShell?.className).toContain('items-end')
+    expect(userShell?.className).toContain('group')
+    expect(userShell?.className).not.toContain('w-full')
     expect(assistantShell).toBeTruthy()
     expect(assistantShell?.className).toContain('items-start')
+    expect(assistantShell?.className).toContain('group')
+    expect(assistantShell?.className).not.toContain('w-full')
     expect(assistantShell?.className).not.toContain('ml-10')
     expect(userActions?.getAttribute('data-align')).toBe('end')
     expect(assistantActions?.getAttribute('data-align')).toBe('start')

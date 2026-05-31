@@ -64,14 +64,14 @@ export const AssistantMessage = memo(function AssistantMessage({ content, isStre
   const documentLayout = shouldUseDocumentLayout(content)
 
   return (
-    <div className="group mb-5 flex justify-start">
+    <div className="mb-5 flex justify-start">
       <div
         data-message-shell="assistant"
         data-layout={documentLayout ? 'document' : 'bubble'}
-        className={`flex min-w-0 flex-col items-start gap-2 ${
+        className={`group flex min-w-0 flex-col items-start gap-2 ${
           documentLayout
             ? 'w-full max-w-full'
-            : 'w-full max-w-[88%] sm:max-w-[80%] lg:max-w-[72%]'
+            : 'max-w-[88%] sm:max-w-[80%] lg:max-w-[72%]'
         }`}
       >
         <div className={`rounded-[20px] rounded-tl-[8px] border border-[var(--color-border)]/60 bg-[var(--color-surface)] px-4 py-3 text-sm text-[var(--color-text-primary)] shadow-sm ${
